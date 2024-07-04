@@ -1,0 +1,4 @@
+C:\Users\admin\source\repos\MpesaService\obj\Debug\MpesaService.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\MpesaService\obj\Debug\MpesaService.ProjectInstaller.resources
+C:\Users\admin\source\repos\MpesaService\obj\Debug\MpesaService.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\MpesaService\obj\Debug\MpesaService.csproj.CoreCompileInputs.cache
