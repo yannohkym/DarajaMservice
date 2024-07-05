@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Users\25474\source\repos\DarajaMservice\bin\Debug\MpesaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\25474\source\repos\DarajaMservice\bin\Debug\MpesaService.InstallLog
+   assemblypath = C:\Users\25474\source\repos\DarajaMservice\bin\Debug\MpesaService.exe
+Installing service Service1...
+Creating EventLog source Service1 in log Application...
+Rolling back assembly 'C:\Users\25474\source\repos\DarajaMservice\bin\Debug\MpesaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\25474\source\repos\DarajaMservice\bin\Debug\MpesaService.InstallLog
+   assemblypath = C:\Users\25474\source\repos\DarajaMservice\bin\Debug\MpesaService.exe
+Restoring event log to previous state for source Service1.

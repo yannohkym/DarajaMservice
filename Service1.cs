@@ -70,13 +70,29 @@ namespace MpesaService
         {
             string sourceConnectionString = "Server=YANNOH; Database=ProductApi;User ID=sa;Password=Pass@123; TrustServerCertificate=true;";
             string destinationConnectionString = "Server=YANNOH; Database=Umoja_RubberHO;User ID=sa;Password=Pass@123; TrustServerCertificate=true;";
-            string sourceTable = "SourceTable";
-            string destinationTable = "DestinationTable";
+            string sourceTable = "Payments";
+            string destinationTable = "U_IVENDSTORE";
 
-            DataBaseHelper dbHelper = new DataBaseHelper(sourceConnectionString, destinationConnectionString);
-            dbHelper.TransferUniqueRecords(sourceTable, destinationTable);
+			var columnMappings = new Dictionary<string, string>
+            {
+	        { "TransID", "U_TransID" },
+	        { "TransactionType", "U_TransactionType" },
+	        { "TransTime", "U_TransTime" },
+	        { "TransAmount", "U_TransAmount" },
+	        { "BusinessShortCode", "U_BusinessShortCode" },
+	        { "BillRefNumber", "U_BillRefNumber" },
+	        { "InvoiceNumber", "U_InvoiceNumber" },
+	        { "OrgAccountBalance", "U_OrgAccountBalance" },
+	        { "ThirdPartyTransID", "U_ThirdPartyTransID" },
+	        { "MSISDN", "U_MSISDN" },
+	        { "FirstName", "U_FirstName" },
+	        { "MiddleName", "U_MiddleName" },
+	        { "LastName", "U_LastName" },
+	        { "status", "U_status" }
+            };
 
-            Console.WriteLine("Unique records transferred successfully.");
-        }
+			var dbHelper = new DataBaseHelper(sourceConnectionString, destinationConnectionString, columnMappings);
+			dbHelper.TransferUniqueRecords(sourceTable, destinationTable);
+		}
     }
 }
