@@ -64,15 +64,7 @@ using System.Diagnostics;
 											insertCommand.Parameters.AddWithValue("@" + mapping.Value, row[mapping.Key]);
 										}
 
-								// Add additional fixed values for the destination table columns
-										insertCommand.Parameters.AddWithValue("@IVENDSTOREKey", "System");
-										insertCommand.Parameters.AddWithValue("@CreatedBy", true);
-										insertCommand.Parameters.AddWithValue("@Created", DateTime.Now);
-										insertCommand.Parameters.AddWithValue("@ModifiedBy", true);
-										insertCommand.Parameters.AddWithValue("@Modified", true);
-										insertCommand.Parameters.AddWithValue("@IsDeleted", false);
-
-										insertCommand.ExecuteNonQuery();
+											insertCommand.ExecuteNonQuery();
 									}
 								}
 							}

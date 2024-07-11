@@ -69,9 +69,9 @@ namespace MpesaService
         public void TransferData()
         {
             string sourceConnectionString = "Server=YANNOH; Database=ProductApi;User ID=sa;Password=Pass@123; TrustServerCertificate=true;";
-            string destinationConnectionString = "Server=YANNOH; Database=Umoja_RubberHO;User ID=sa;Password=Pass@123; TrustServerCertificate=true;";
+            string destinationConnectionString = "Server=YANNOH; Database=IVEND;User ID=sa;Password=Pass@123; TrustServerCertificate=true;";
             string sourceTable = "Payments";
-            string destinationTable = "U_IVENDSTORE";
+            string destinationTable = "Transactions";
 
 			var columnMappings = new Dictionary<string, string>
             {
