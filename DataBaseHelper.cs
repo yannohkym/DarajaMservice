@@ -92,11 +92,11 @@ namespace MpesaService
 			{
 				// Assuming U_TransID is the unique key for simplicity
 				string transID = row["TransID"].ToString();
-				string checkCommandText = $"SELECT COUNT(1) FROM {destinationTable} WHERE TransID = TransID";
+				string checkCommandText = $"SELECT COUNT(1) FROM {destinationTable} WHERE TransID = @TransID";
 
 				using (SqlCommand checkCommand = new SqlCommand(checkCommandText, connection))
 				{
-					checkCommand.Parameters.AddWithValue("@U_TransID", transID);
+					checkCommand.Parameters.AddWithValue("@TransID", transID);
 					return (int)checkCommand.ExecuteScalar() > 0;
 				}
 			}
