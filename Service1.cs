@@ -29,7 +29,7 @@ namespace MpesaService
             WriteToFile("Transfer data Service is started at " + DateTime.Now);
             TransferData();
             timer.Elapsed += new ElapsedEventHandler(OnElapsedTime);
-            timer.Interval = 5000; //number in milisecinds
+            timer.Interval = 10000; //number in milisecinds
             timer.Enabled = true;
         }
         protected override void OnStop()
@@ -40,7 +40,8 @@ namespace MpesaService
         private void OnElapsedTime(object source, ElapsedEventArgs e)
         {
             WriteToFile("Transfer data Service is recalled at " + DateTime.Now);
-        }
+			TransferData();
+		}
         public void WriteToFile(string Message)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "\\Logs";
@@ -75,24 +76,28 @@ namespace MpesaService
 
 			var columnMappings = new Dictionary<string, string>
             {
-	        { "TransID", "U_TransID" },
-	        { "TransactionType", "U_TransactionType" },
-	        { "TransTime", "U_TransTime" },
-	        { "TransAmount", "U_TransAmount" },
-	        { "BusinessShortCode", "U_BusinessShortCode" },
-	        { "BillRefNumber", "U_BillRefNumber" },
-	        { "InvoiceNumber", "U_InvoiceNumber" },
-	        { "OrgAccountBalance", "U_OrgAccountBalance" },
-	        { "ThirdPartyTransID", "U_ThirdPartyTransID" },
-	        { "MSISDN", "U_MSISDN" },
-	        { "FirstName", "U_FirstName" },
-	        { "MiddleName", "U_MiddleName" },
-	        { "LastName", "U_LastName" },
-	        { "status", "U_status" }
+	        { "TransID", "TransID" },
+	        { "TransactionType", "TransactionType" },
+	        { "TransTime", "TransTime" },
+	        { "TransAmount", "TransAmount" },
+	        { "BusinessShortCode", "BusinessShortCode" },
+	        { "BillRefNumber", "BillRefNumber" },
+	        { "InvoiceNumber", "InvoiceNumber" },
+	        { "OrgAccountBalance", "OrgAccountBalance" },
+	        { "ThirdPartyTransID", "ThirdPartyTransID" },
+	        { "MSISDN", "MSISDN" },
+	        { "FirstName", "FirstName" },
+	        { "MiddleName", "MiddleName" },
+	        { "LastName", "LastName" },
+	        { "status", "status" }
             };
 
 			var dbHelper = new DataBaseHelper(sourceConnectionString, destinationConnectionString, columnMappings);
 			dbHelper.TransferUniqueRecords(sourceTable, destinationTable);
 		}
     }
+
+
+
+
 }
